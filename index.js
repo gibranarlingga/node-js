@@ -4,6 +4,7 @@ const app = express();
 const PORT = 5000;
 
 const islogin = false;
+let blogs = [];
 
 app.set('view engine', 'hbs');
 
@@ -15,15 +16,23 @@ app.get('/', function(req, res) {
     res.render('index');
 });
 
+app.post('/', function(req, res) {
+    let data = req.body;
+    blogs.push(data)
+    res.redirect('/blog');
+});
+
 
 app.get('/blog', function(req, res) {
+    console.log(blogs)
     res.render('blog', { islogin });
 });
 
-app.post('/blog', function(req, res) {
-    let data = req.body;
-    console.log(data);
-});
+// app.post('/blog', function(req, res) {
+//     let data = req.body;
+//     blogs.push(data)
+//     res.redirect('/blog');
+// });
 
 app.get('/Contact-me', function(req, res) {
     res.render('Contact-me');

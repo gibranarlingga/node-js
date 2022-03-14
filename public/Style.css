@@ -4,6 +4,12 @@ body {
     background-color: rgb(238, 237, 237);
 }
 
+div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
 
 /* bagian add my projek bootsrapt */
 
@@ -104,7 +110,7 @@ textarea {
 
 .bg {
     background: white;
-    height: 100vh;
+    height: 93vh;
 }
 
 .bg h1 {
